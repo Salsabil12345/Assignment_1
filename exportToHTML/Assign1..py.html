@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>Assign1..py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Assign1..py</font>
+</center></td></tr></table>
+<pre><span class="s0">class </span><span class="s1">Passenger</span><span class="s2">:</span>
+    <span class="s0">def </span><span class="s1">__init__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">name</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">name </span><span class="s2">= </span><span class="s1">name</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">ticket </span><span class="s2">= </span><span class="s0">None</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">boarding_pass </span><span class="s2">= </span><span class="s0">None</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">baggage_checked </span><span class="s2">= </span><span class="s0">False</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">seat_assigned </span><span class="s2">= </span><span class="s0">False</span>
+
+    <span class="s0">def </span><span class="s1">set_ticket</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">ticket</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">ticket </span><span class="s2">= </span><span class="s1">ticket</span>
+
+    <span class="s0">def </span><span class="s1">get_name</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">name</span>
+
+    <span class="s0">def </span><span class="s1">get_ticket</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">ticket</span>
+
+    <span class="s0">def </span><span class="s1">set_boarding_pass</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">boarding_pass</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">boarding_pass </span><span class="s2">= </span><span class="s1">boarding_pass</span>
+
+    <span class="s0">def </span><span class="s1">get_boarding_pass</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">boarding_pass</span>
+
+    <span class="s0">def </span><span class="s1">set_baggage_checked</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">status</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">baggage_checked </span><span class="s2">= </span><span class="s1">status</span>
+
+    <span class="s0">def </span><span class="s1">is_baggage_checked</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">baggage_checked</span>
+
+    <span class="s0">def </span><span class="s1">set_seat_assigned</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">status</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">seat_assigned </span><span class="s2">= </span><span class="s1">status</span>
+
+    <span class="s0">def </span><span class="s1">is_seat_assigned</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">seat_assigned</span>
+
+    <span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s3">f&quot;Passenger: </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">name</span><span class="s0">}</span><span class="s3">&quot;</span>
+
+
+<span class="s0">class </span><span class="s1">Flight</span><span class="s2">:</span>
+    <span class="s0">def </span><span class="s1">__init__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">flight_number</span><span class="s2">, </span><span class="s1">departure_location</span><span class="s2">, </span><span class="s1">arrival_location</span><span class="s2">, </span><span class="s1">scheduled_departure_time</span><span class="s2">, </span><span class="s1">scheduled_arrival_time</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">flight_number </span><span class="s2">= </span><span class="s1">flight_number</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">departure_location </span><span class="s2">= </span><span class="s1">departure_location</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">arrival_location </span><span class="s2">= </span><span class="s1">arrival_location</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">scheduled_departure_time </span><span class="s2">= </span><span class="s1">scheduled_departure_time</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">scheduled_arrival_time </span><span class="s2">= </span><span class="s1">scheduled_arrival_time</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">passengers </span><span class="s2">= []</span>
+
+    <span class="s0">def </span><span class="s1">add_passenger</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">passenger</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">passengers</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s1">passenger</span><span class="s2">)</span>
+
+    <span class="s0">def </span><span class="s1">get_flight_number</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">flight_number</span>
+
+    <span class="s0">def </span><span class="s1">get_departure_location</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">departure_location</span>
+
+    <span class="s0">def </span><span class="s1">get_arrival_location</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">arrival_location</span>
+
+    <span class="s0">def </span><span class="s1">get_scheduled_departure_time</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">scheduled_departure_time</span>
+
+    <span class="s0">def </span><span class="s1">get_scheduled_arrival_time</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">scheduled_arrival_time</span>
+
+    <span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s3">f&quot;Flight </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">flight_number</span><span class="s0">} </span><span class="s3">from </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">departure_location</span><span class="s0">} </span><span class="s3">to </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">arrival_location</span><span class="s0">}</span><span class="s3">, Departure: </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">scheduled_departure_time</span><span class="s0">}</span><span class="s3">, Arrival: </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">scheduled_arrival_time</span><span class="s0">}</span><span class="s3">&quot;</span>
+
+
+<span class="s0">class </span><span class="s1">Ticket</span><span class="s2">:</span>
+    <span class="s0">def </span><span class="s1">__init__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">ticket_number</span><span class="s2">, </span><span class="s1">ticket_type</span><span class="s2">, </span><span class="s1">electronic_ticket_number</span><span class="s2">, </span><span class="s1">passenger</span><span class="s2">, </span><span class="s1">flight</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">ticket_number </span><span class="s2">= </span><span class="s1">ticket_number</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">ticket_type </span><span class="s2">= </span><span class="s1">ticket_type</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">electronic_ticket_number </span><span class="s2">= </span><span class="s1">electronic_ticket_number</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">passenger </span><span class="s2">= </span><span class="s1">passenger</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">flight </span><span class="s2">= </span><span class="s1">flight</span>
+
+    <span class="s0">def </span><span class="s1">get_ticket_number</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">ticket_number</span>
+
+    <span class="s0">def </span><span class="s1">get_ticket_type</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">ticket_type</span>
+
+    <span class="s0">def </span><span class="s1">get_electronic_ticket_number</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">electronic_ticket_number</span>
+
+    <span class="s0">def </span><span class="s1">get_passenger</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">passenger</span>
+
+    <span class="s0">def </span><span class="s1">get_flight</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">flight</span>
+
+    <span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s3">f&quot;Ticket </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">ticket_number</span><span class="s0">} </span><span class="s3">Type: </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">ticket_type</span><span class="s0">}</span><span class="s3">, Electronic Ticket Number: </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">electronic_ticket_number</span><span class="s0">}</span><span class="s3">&quot;</span>
+
+
+<span class="s0">class </span><span class="s1">BoardingPass</span><span class="s2">:</span>
+    <span class="s0">def </span><span class="s1">__init__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">, </span><span class="s1">flight</span><span class="s2">, </span><span class="s1">passenger</span><span class="s2">, </span><span class="s1">gate</span><span class="s2">, </span><span class="s1">seat_number</span><span class="s2">):</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">flight </span><span class="s2">= </span><span class="s1">flight</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">passenger </span><span class="s2">= </span><span class="s1">passenger</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">gate </span><span class="s2">= </span><span class="s1">gate</span>
+        <span class="s1">self</span><span class="s2">.</span><span class="s1">seat_number </span><span class="s2">= </span><span class="s1">seat_number</span>
+
+    <span class="s0">def </span><span class="s1">get_flight</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">flight</span>
+
+    <span class="s0">def </span><span class="s1">get_passenger</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">passenger</span>
+
+    <span class="s0">def </span><span class="s1">get_gate</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">gate</span>
+
+    <span class="s0">def </span><span class="s1">get_seat_number</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s1">self</span><span class="s2">.</span><span class="s1">seat_number</span>
+
+    <span class="s0">def </span><span class="s1">__str__</span><span class="s2">(</span><span class="s1">self</span><span class="s2">):</span>
+        <span class="s0">return </span><span class="s3">f&quot;Boarding Pass for </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">passenger</span><span class="s0">} </span><span class="s3">- Flight </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">flight</span><span class="s2">.</span><span class="s1">get_flight_number</span><span class="s2">()</span><span class="s0">}</span><span class="s3">, Gate: </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">gate</span><span class="s0">}</span><span class="s3">, Seat: </span><span class="s0">{</span><span class="s1">self</span><span class="s2">.</span><span class="s1">seat_number</span><span class="s0">}</span><span class="s3">&quot;</span>
+
+<span class="s4"># Create a Passenger</span>
+<span class="s1">passenger1 </span><span class="s2">= </span><span class="s1">Passenger</span><span class="s2">(</span><span class="s3">&quot;James Smith&quot;</span><span class="s2">)</span>
+
+<span class="s4"># Create a Flight</span>
+<span class="s1">flight1 </span><span class="s2">= </span><span class="s1">Flight</span><span class="s2">(</span><span class="s3">&quot;NA4321&quot;</span><span class="s2">, </span><span class="s3">&quot;Chicago ORD&quot;</span><span class="s2">, </span><span class="s3">&quot;New York JFK&quot;</span><span class="s2">, </span><span class="s3">&quot;11:40&quot;</span><span class="s2">, </span><span class="s3">&quot;13:30&quot;</span><span class="s2">)</span>
+
+<span class="s4"># Create a Ticket</span>
+<span class="s1">ticket1 </span><span class="s2">= </span><span class="s1">Ticket</span><span class="s2">(</span><span class="s3">&quot;629&quot;</span><span class="s2">, </span><span class="s3">&quot;First class&quot;</span><span class="s2">, </span><span class="s5">123456789</span><span class="s2">, </span><span class="s1">passenger1</span><span class="s2">, </span><span class="s1">flight1</span><span class="s2">)</span>
+<span class="s1">passenger1</span><span class="s2">.</span><span class="s1">set_ticket</span><span class="s2">(</span><span class="s1">ticket1</span><span class="s2">)</span>
+
+<span class="s4"># Create a Boarding Pass</span>
+<span class="s1">boarding_pass1 </span><span class="s2">= </span><span class="s1">BoardingPass</span><span class="s2">(</span><span class="s1">flight1</span><span class="s2">, </span><span class="s1">passenger1</span><span class="s2">, </span><span class="s3">&quot;Gate 03&quot;</span><span class="s2">, </span><span class="s3">&quot;09A&quot;</span><span class="s2">)</span>
+<span class="s1">passenger1</span><span class="s2">.</span><span class="s1">set_boarding_pass</span><span class="s2">(</span><span class="s1">boarding_pass1</span><span class="s2">)</span>
+
+<span class="s4"># Display Boarding Pass details</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Boarding Pass Details:&quot;</span><span class="s2">)</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Passenger:&quot;</span><span class="s2">, </span><span class="s1">passenger1</span><span class="s2">.</span><span class="s1">get_name</span><span class="s2">())</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Flight:&quot;</span><span class="s2">, </span><span class="s1">boarding_pass1</span><span class="s2">.</span><span class="s1">get_flight</span><span class="s2">())</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Gate:&quot;</span><span class="s2">, </span><span class="s1">boarding_pass1</span><span class="s2">.</span><span class="s1">get_gate</span><span class="s2">())</span>
+<span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Seat:&quot;</span><span class="s2">, </span><span class="s1">boarding_pass1</span><span class="s2">.</span><span class="s1">get_seat_number</span><span class="s2">())</span>
+
+
+</pre>
+</body>
+</html>
